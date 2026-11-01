@@ -26,8 +26,8 @@
 
 ## Implementation constraints encountered
 
-- A local Git repository on `main` is initialized for the requested Pages deployment. The private GitHub remote, account authentication, and deployment remain pending until the account authorizes the browser sign-in.
-- Private repository hosting requires a GitHub plan that supports Pages for private repositories; do not change repository visibility without the user's approval.
+- The project is pushed to the private repository `https://github.com/Tamnya/abandoned-but-not-forgotten` on `main`.
+- The Pages workflow is present, but the initial `Configure Pages` run failed because the account plan does not support Pages for private repositories. The owner chose to keep the source private and upgrade the plan. After the upgrade, enable Pages for this repository and rerun the workflow; do not change repository visibility without the user's approval.
 - No browser-based keyboard/reduced-motion walkthrough was available in this workspace; those checks need a manual browser pass before event submission.
 - The team-name placeholder on the Home page must be replaced before submission.
 

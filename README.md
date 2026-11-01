@@ -46,6 +46,8 @@ The current visual direction borrows from an instrument cluster: deep cockpit su
 
 The repository includes `.github/workflows/pages.yml`. It publishes the project root after each push to `main` and supports manual runs from the Actions tab. In the GitHub repository, open **Settings → Pages** and choose **GitHub Actions** as the publishing source. For a private repository, the GitHub account or organization plan must support Pages on private repositories. The expected project URL is `https://<owner>.github.io/abandoned-but-not-forgotten/` once the first workflow run succeeds.
 
+The source is currently in the private repository [`Tamnya/abandoned-but-not-forgotten`](https://github.com/Tamnya/abandoned-but-not-forgotten). GitHub rejected Pages setup under the current plan; the owner chose to keep the repository private and upgrade before publishing. No Pages URL is live yet.
+
 ## Images, artwork, and credits
 
 The bundled images are PIA12922 (Apollo 12 landing area), PIA22210 (Curiosity panorama), and PIA01959 (Voyager 2 image of Saturn). Their files are under `assets/images/`; complete credits and metadata are in `images.json` and The Almanac. Follow the [NASA Image and Video Library usage guidelines](https://images.nasa.gov/). The Saturn entry's archive date is labeled as an archive metadata date because it may not represent the spacecraft encounter date.
