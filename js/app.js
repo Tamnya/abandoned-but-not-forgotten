@@ -210,7 +210,7 @@ function renderCollection() {
     <div class="console-heading collection-readout"><div><span class="transmission-label">Recovered planetary signals</span><strong id="progress-text">${found.length}/9 cards recovered</strong></div><div class="flight-readout"><span>COMPLETION</span><strong>${percent}%</strong></div></div><div class="progress-track" role="progressbar" aria-label="Planet card collection progress" aria-valuemin="0" aria-valuemax="9" aria-valuenow="${found.length}"><span class="progress-fill" style="width:${percent}%"></span></div>
     <p><button id="hint-button" type="button">Request a Captain's hint</button> <span id="hint-output" class="hint" aria-live="polite">Keep watch—an orbiting star appears now and then.</span></p>
     <div class="album-grid">${PLANETS.map(([name,id,color]) => renderPlanetCard(name,id,color,found.includes(id))).join("")}</div>
-    <section class="certificate" id="certificate"><span class="eyebrow">Mission complete</span><h2>You're a Space Explorer!</h2><p>Certificate awarded for collecting all nine planet cards.</p><p>Explorer name: _______________________</p><p>Date: _______________________</p></section><p><button id="print-certificate" type="button">Print certificate / album</button></p>`;
+    <section class="certificate" id="certificate"><span class="eyebrow">Mission complete</span><h2>You're a Space Explorer!</h2><p>Certificate awarded for collecting all nine planet cards.</p><p>Explorer name: _______________________</p><p>Date: _______________________</p></section><div class="collection-actions"><button id="print-certificate" type="button">Print certificate / album</button><button id="reset-collection" class="reset-collection" type="button">Reset Easter eggs</button></div>`;
   document.querySelector("#hint-button").addEventListener("click", () => {
     const output = document.querySelector("#hint-output");
     if (!uncollected.length) { output.textContent = "Mission complete—every planet is in your flight log!"; return; }
@@ -219,6 +219,12 @@ function renderCollection() {
     if (existing) { existing.focus(); existing.classList.add("orb-hint"); }
   });
   document.querySelector("#print-certificate").addEventListener("click", () => { document.querySelector("#certificate").classList.add("visible"); window.print(); });
+  document.querySelector("#reset-collection").addEventListener("click", () => {
+    if (!window.confirm("Reset all collected planet Easter eggs in this browser? This cannot be undone.")) return;
+    localStorage.removeItem("space-comic-planets");
+    renderCollection(); main.focus({ preventScroll: true });
+    toast("Easter egg collection reset. The planet stars are back in play!");
+  });
   if (found.length === PLANETS.length) document.querySelector("#certificate").classList.add("visible");
 }
 

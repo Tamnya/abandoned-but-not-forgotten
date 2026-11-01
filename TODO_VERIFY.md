@@ -47,3 +47,4 @@
 - Ideas for a later update: black-box mission recaps, unlockable character callouts, shooter challenge medals, and a daily rotating fact.
 - A read-only code review found off-screen collectible timing and missing direct count links; candidates are now limited to visible blocks with room below, and the planet moon-count label links to the NASA page for that count where one is listed. The saved sound state now initializes its accessible label correctly, and a collected orb pops before removal.
 - Final static JavaScript syntax check passed. The running Home, Arcade, and Collection routes responded with HTTP 200. No browser runtime was available here to confirm actual sound playback or game/keyboard/touch behavior.
+- The Collection page now offers a confirmation-protected reset for Easter egg progress; verify cancel, confirm, and recapture behavior in a browser.
