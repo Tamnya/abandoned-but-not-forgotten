@@ -1,0 +1,49 @@
+{
+  "images": [
+    {
+      "id": "IMG-001",
+      "file": "assets/images/apollo-12-lunar-site.jpg",
+      "title": "Apollo 12 Second Look: Midday on the Ocean of Storms",
+      "nasa_id": "PIA12922",
+      "url": "https://images.nasa.gov/details/PIA12922",
+      "publisher": "NASA / NASA Image and Video Library",
+      "credit": "NASA/GSFC/Arizona State University",
+      "image_date": "2009-11-04 (archive record)",
+      "alt": "Gray orbital photograph of the Apollo 12 landing area, with small bright and dark marks on the lunar surface.",
+      "usage_note": "NASA public-domain U.S. government image; credit NASA/GSFC/Arizona State University. Confirm archive-specific reuse guidance before external publication.",
+      "chapter": "moon",
+      "page": "moon.html",
+      "source_id": "S-050"
+    },
+    {
+      "id": "IMG-002",
+      "file": "assets/images/curiosity-gale-panorama.jpg",
+      "title": "Wide-Angle Panorama from Ridge in Mars' Gale Crater",
+      "nasa_id": "PIA22210",
+      "url": "https://images.nasa.gov/details/PIA22210",
+      "publisher": "NASA / NASA Image and Video Library",
+      "credit": "NASA/JPL-Caltech/MSSS",
+      "image_date": "2017-10-25 (panorama components; archive record published 2018-01-30)",
+      "alt": "Wide panorama from Curiosity showing a rocky Martian foreground and distant layered mountains beneath a pale sky.",
+      "usage_note": "NASA public-domain U.S. government image; credit NASA/JPL-Caltech/MSSS. Confirm archive-specific reuse guidance before external publication.",
+      "chapter": "mars",
+      "page": "mars.html",
+      "source_id": "S-051"
+    },
+    {
+      "id": "IMG-003",
+      "file": "assets/images/voyager-2-saturn.jpg",
+      "title": "Voyager 2 Image of Saturn",
+      "nasa_id": "PIA01959",
+      "url": "https://images.nasa.gov/details/PIA01959",
+      "publisher": "NASA / NASA Image and Video Library",
+      "credit": "NASA/JPL",
+      "image_date": "1999-04-25 (archive metadata date)",
+      "alt": "Voyager 2 false-color image of Saturn and its rings against black space, with two small moons nearby.",
+      "usage_note": "NASA public-domain U.S. government image; credit NASA/JPL. The archive metadata date is recorded as provided and may describe the processed image record, not the spacecraft encounter date.",
+      "chapter": "deep_space",
+      "page": "deep-space.html",
+      "source_id": "S-052"
+    }
+  ]
+}
