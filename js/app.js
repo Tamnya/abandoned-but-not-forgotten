@@ -210,7 +210,20 @@ function renderCollection() {
     <div class="console-heading collection-readout"><div><span class="transmission-label">Recovered planetary signals</span><strong id="progress-text">${found.length}/9 cards recovered</strong></div><div class="flight-readout"><span>COMPLETION</span><strong>${percent}%</strong></div></div><div class="progress-track" role="progressbar" aria-label="Planet card collection progress" aria-valuemin="0" aria-valuemax="9" aria-valuenow="${found.length}"><span class="progress-fill" style="width:${percent}%"></span></div>
     <p><button id="hint-button" type="button">Request a Captain's hint</button> <span id="hint-output" class="hint" aria-live="polite">Keep watch—an orbiting star appears now and then.</span></p>
     <div class="album-grid">${PLANETS.map(([name,id,color]) => renderPlanetCard(name,id,color,found.includes(id))).join("")}</div>
-    <section class="certificate" id="certificate"><span class="eyebrow">Mission complete</span><h2>You're a Space Explorer!</h2><p>Certificate awarded for collecting all nine planet cards.</p><p>Explorer name: _______________________</p><p>Date: _______________________</p></section><div class="collection-actions"><button id="print-certificate" type="button">Print certificate / album</button><button id="reset-collection" class="reset-collection" type="button">Reset Easter eggs</button></div>`;
+    <div class="certificate-controls no-print"><label for="explorer-name">Explorer name</label><input id="explorer-name" type="text" maxlength="60" autocomplete="name" placeholder="Enter your name"><p>The certificate date updates automatically.</p></div>
+    <section class="certificate" id="certificate"><span class="eyebrow">Mission complete</span><h2>You're a Space Explorer!</h2><p>Certificate awarded for collecting all nine planet cards.</p><p>Explorer name: <strong id="certificate-name">Space Explorer</strong></p><p>Date awarded: <time id="certificate-date"></time></p></section><div class="collection-actions"><button id="print-certificate" type="button">Print certificate / album</button><button id="reset-collection" class="reset-collection" type="button">Reset Easter eggs</button></div>`;
+  const nameInput = document.querySelector("#explorer-name");
+  const certificateName = document.querySelector("#certificate-name");
+  const certificateDate = document.querySelector("#certificate-date");
+  nameInput.value = localStorage.getItem("space-comic-explorer-name") || "";
+  certificateName.textContent = nameInput.value.trim() || "Space Explorer";
+  const updateCertificateDate = () => { certificateDate.textContent = new Intl.DateTimeFormat(undefined, { dateStyle: "long" }).format(new Date()); };
+  updateCertificateDate();
+  nameInput.addEventListener("input", () => {
+    const name = nameInput.value.trim();
+    certificateName.textContent = name || "Space Explorer";
+    localStorage.setItem("space-comic-explorer-name", nameInput.value);
+  });
   document.querySelector("#hint-button").addEventListener("click", () => {
     const output = document.querySelector("#hint-output");
     if (!uncollected.length) { output.textContent = "Mission complete—every planet is in your flight log!"; return; }
@@ -218,7 +231,7 @@ function renderCollection() {
     const existing = document.querySelector(".collectible-orb");
     if (existing) { existing.focus(); existing.classList.add("orb-hint"); }
   });
-  document.querySelector("#print-certificate").addEventListener("click", () => { document.querySelector("#certificate").classList.add("visible"); window.print(); });
+  document.querySelector("#print-certificate").addEventListener("click", () => { updateCertificateDate(); document.querySelector("#certificate").classList.add("visible"); window.print(); });
   document.querySelector("#reset-collection").addEventListener("click", () => {
     if (!window.confirm("Reset all collected planet Easter eggs in this browser? This cannot be undone.")) return;
     localStorage.removeItem("space-comic-planets");

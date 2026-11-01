@@ -108,6 +108,10 @@ p { max-width: 72ch; }
 .progress-fill { display: block; height: 100%; background: var(--yellow); transition: width .35s ease; }
 .certificate { display: none; color: #111827; background: #fff8e8; border: 7px double var(--red); text-align: center; padding: 2rem; margin: 1rem auto; max-width: 700px; }
 .certificate.visible { display: block; }
+.certificate-controls { display: grid; gap: .45rem; max-width: 420px; margin: 1rem auto; }
+.certificate-controls label { color: var(--cyan); font-weight: 800; }
+.certificate-controls input { min-height: 44px; padding: .65rem .8rem; border: 2px solid var(--cyan); border-radius: .4rem; background: #0b1c28; color: var(--white); font: inherit; }
+.certificate-controls p { margin: 0; color: var(--muted); font-size: .9rem; }
 .almanac { color: #211b12; background: var(--paper); border: 7px double #50381e; padding: 1rem; font-family: Georgia, "Times New Roman", serif; box-shadow: 5px 6px 0 #654b2d; }
 .almanac h1,.almanac h2,.almanac h3 { font-family: Georgia, "Times New Roman", serif; }
 .almanac a { color: #164a63; }
